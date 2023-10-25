@@ -5,3 +5,5 @@ config :family, Family.Repo,
   username: "jrowah",
   password: "postgres",
   hostname: "localhost"
+
+config :family, ecto_repos: [Family.Repo]
