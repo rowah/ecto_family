@@ -4,7 +4,7 @@ defmodule Family.Member do
   schema "members" do
     field(:first_name, :string)
     field(:last_name, :string)
-    field(:age, :integer)
+    field(:age, :integer, default: 0)
   end
 
   def changeset(member, params \\ %{}) do

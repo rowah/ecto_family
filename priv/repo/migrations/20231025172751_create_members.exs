@@ -3,9 +3,9 @@ defmodule Family.Repo.Migrations.CreateMembers do
 
   def change do
     create table(:members) do
-      add :first_name, :string
-      add :last_name, :string
-      add :age, :integer
+      add :first_name, :string, null: false
+      add :last_name, :string, null: false
+      add :age, :integer, default: 0
 
     end
   end
