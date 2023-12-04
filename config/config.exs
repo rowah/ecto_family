@@ -6,4 +6,5 @@ config :family, Family.Repo,
   password: "postgres",
   hostname: "localhost"
 
+# allow our application to run ecto mix commands from the commandline
 config :family, ecto_repos: [Family.Repo]
