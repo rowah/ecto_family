@@ -1,5 +1,6 @@
 defmodule Family.Member do
   use Ecto.Schema
+  import Ecto.Changeset
 
   schema "members" do
     field(:first_name, :string)
@@ -9,7 +10,9 @@ defmodule Family.Member do
 
   def changeset(member, params \\ %{}) do
     member
-    |> Ecto.Changeset.cast(params, [:first_name, :last_name, :age])
-    |> Ecto.Changeset.validate_required([:first_name, :last_name])
+    |> cast(params, [:first_name, :last_name, :age])
+    |> validate_required([:first_name, :last_name])
+    |> validate_length(:first_name, min: 2)
+    |> validate_length(:last_name, min: 2)
   end
 end
